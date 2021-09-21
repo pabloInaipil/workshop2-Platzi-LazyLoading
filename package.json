@@ -1,4 +1,5 @@
 {
+  "homepage": "https://pabloinaipil.github.io/workshop2-Platzi-LazyLoading",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
