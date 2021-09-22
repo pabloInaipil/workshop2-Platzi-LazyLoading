@@ -1,8 +1,8 @@
-import { registerImage } from "./lazy.js";
+import {registerImage} from "./lazy.js";
 
-const createImageNode = () => { 
-    // crea número aleatorio entre 1 y 120 
-    const random = () => Math.floor(Math.random() * (122 -1 )) + 1;
+const createImageNode = ()=>{
+    //crear número aleatorio entre 1 y 120
+    const random = () => Math.floor(Math.random() * (122 - 1)) + 1;
     const url = "https://randomfox.ca/images/";
 
     const container = document.createElement('div');
@@ -12,7 +12,7 @@ const createImageNode = () => {
     imagen.className = "mx-auto rounded-md bg-gray-300";
     imagen.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
     imagen.dataset.url_imagen = url + random() + ".jpg";
-    imagen.width = 320; 
+    imagen.width = 320;
 
     container.append(imagen);
     return [container, imagen];
@@ -29,11 +29,11 @@ const addImage = () => {
     registerImage(newImage);
 };
 
-const clearImages = () => { 
+const clearImages = () =>{
+    //eliminar todos los nodos de img
     const container = document.querySelector('#images');
     container.innerHTML = "";
 };
 
 addButton.addEventListener('click', addImage);
 clsButton.addEventListener('click', clearImages);
-

@@ -3,19 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="Web site created using create-snowpack-app"
+    />
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="/_dist_/index.css"
     />  
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="/_dist_/index.css"
-  />
     <title>Workshop 2: Lazy  Loading </title>
   </head>
   <body>
+ 
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p
@@ -29,10 +30,10 @@
           Workshop 2 Lazy Loading
         </h3>
         <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 mx-auto">
-          Plugin en vanilla JS para cargar imágenes con lazy load.
+          Plugin en vanilla JavaScript para cargar imágenes con lazy load.
         </p>
         <p class="mt-4"></p>
-        <p class="mt-4 max-w-2xl text-s leading-9 text-gray-500 mx-auto">
+        <p class="mt-4 mt-4 max-w-2xl text-s leading-7 text-gray-500 mx-auto">
           Lás imágenes agregadas no se descargarán hasta que sean visibles en la pantalla
         </p>
 
@@ -40,8 +41,12 @@
         class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Agregar Imagen</button>
 
         <p class="mt-4">
-        <button id="reset" class="font-medium text-white-600 hover:text-red-800">Limpiar</button>
+          <button id="reset" 
+           class="font-medium text-white-600 hover:text-red-800">
+            Limpiar
+          </button>
         </p>
+
         <div class="mt-4" id="images"></div>
       </div>
     </div>
@@ -60,7 +65,8 @@
         >
       </p>
     </footer>
-     <!-- Add more scripts here -->
-     <script type="module" src="/_dist_/index.js"></script>
+
+    <!-- Add more scripts here -->
+    <script type="module" src="/_dist_/index.js"></script>
   </body>
 </html>
