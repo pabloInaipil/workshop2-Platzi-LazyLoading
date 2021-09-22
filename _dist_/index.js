@@ -1,24 +1,39 @@
 import { registerImage } from "./lazy.js";
-import { createImageNodes } from "./utils.js";
 
-// Cargue las imagenes existentes cuando cargue la página
-const allImages = document.querySelectorAll("img[data-src]");
-allImages.forEach(registerImage);
+const createImageNode = () => { 
+    // crea número aleatorio entre 1 y 120 
+    const random = () => Math.floor(Math.random() * (122 -1 )) + 1;
+    const url = "https://randomfox.ca/images/";
 
-// Agregar nuevas imagenes 
-const imageContainer = document.querySelector("#images");
-const button = document.querySelector("button[type='submit']");
-button.addEventListener("click", () => { 
-    const [node, image] = createImageNodes();
-    registerImage(image);
-    imageContainer.append(node);
-});
+    const container = document.createElement('div');
+    container.className = "p-4";
 
-//Limpiar 
-const clean = document.querySelector("button[type='reset']");
-clean.addEventListener("click", () => { 
-    imageContainer.innerHTML = "";
-});
+    const imagen = document.createElement('img');
+    imagen.className = "mx-auto rounded-md bg-gray-300";
+    imagen.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjMyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4=";
+    imagen.dataset.url_imagen = url + random() + ".jpg";
+    imagen.width = 320; 
 
+    container.append(imagen);
+    return [container, imagen];
+};
 
+const nuevaImagen = createImageNode();
+const mountNode = document.getElementById('images');
+const addButton = document.getElementById('submit');
+const clsButton = document.getElementById('reset');
+
+const addImage = () => {
+    const [node, newImage] = createImageNode();
+    mountNode.append(node);
+    registerImage(newImage);
+};
+
+const clearImages = () => { 
+    const container = document.querySelector('#images');
+    container.innerHTML = "";
+};
+
+addButton.addEventListener('click', addImage);
+clsButton.addEventListener('click', clearImages);
 

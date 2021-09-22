@@ -1,9 +1,10 @@
+
 @import "../_snowpack/pkg/tailwindcss/dist/base.css";
 @import "../_snowpack/pkg/tailwindcss/dist/components.css";
 @import "../_snowpack/pkg/tailwindcss/dist/utilities.css";
 
-/* Footer */
-footer {
+/* /* /* Footer */
+/* footer {
     text-align: center;
     color: rgb(255, 253, 253);
     background-color: rgb(59, 124, 199);
@@ -42,4 +43,4 @@ footer {
     .footer-personal {
       font-size: 0.7rem;
     }
-  }
+  }  */
